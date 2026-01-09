@@ -700,9 +700,9 @@
       history.push(url);
       historyIndex = history.length - 1;
 
-      // Load in iframe
+      // Load in iframe (use short 's' param)
       const frame = document.getElementById('browserFrame');
-      const proxiedUrl = `${proxyUrl}/browse?session=${sessionId}&url=${encodeURIComponent(url)}`;
+      const proxiedUrl = `${proxyUrl}/browse?s=${sessionId}&url=${encodeURIComponent(url)}`;
       
       frame.onload = () => {
         hideLoading();
@@ -741,7 +741,7 @@
         updateUrlBar(url);
         showLoading();
         document.getElementById('browserFrame').src = 
-          `${proxyUrl}/browse?session=${sessionId}&url=${encodeURIComponent(url)}`;
+          `${proxyUrl}/browse?s=${sessionId}&url=${encodeURIComponent(url)}`;
       }
     }
 
@@ -752,7 +752,7 @@
         updateUrlBar(url);
         showLoading();
         document.getElementById('browserFrame').src = 
-          `${proxyUrl}/browse?session=${sessionId}&url=${encodeURIComponent(url)}`;
+          `${proxyUrl}/browse?s=${sessionId}&url=${encodeURIComponent(url)}`;
       }
     }
 
